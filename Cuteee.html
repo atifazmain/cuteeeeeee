@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background: #fff0f5;
+  }
+
+  h1 {
+    color: #ff4d6d;
+  }
+
+  button {
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  #yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+  }
+
+  #noBtn {
+    background-color: #ccc;
+  }
+</style>
+</head>
+<body>
+
+<h1>Will you be my Valentine Anzara? 💖</h1>
+
+<button id="yesBtn" onclick="yesClicked()">Yes</button>
+<button id="noBtn" onclick="noClicked()">No</button>
+
+<script>
+let yesSize = 18;
+let noTexts = [
+  "No",
+  "Are you sure?",
+  "Pleaseee 🥺",
+  "Think again!",
+  "please sweetheart 😭",
+  "Last chance...",
+  "You can’t resist forever 😌",
+  "One more chance?",
+  "You didn’t mean that… right?",   // <-- comma added here
+  "Double sure?",
+  "Maybe reconsider?",
+  "I can wait 👀",
+  "That felt like a soft no…",
+  "Try again?",
+  "Don’t break my tiny heart 🥺",
+  "Final answer?",
+  "You sure-sure?",
+  "I’ll ask again anyway 😄",
+  "Give it another thought?",
+  "That button seems wrong…",
+  "Are we negotiating now?",
+  "I’ll pretend I didn’t see that.",
+  "Last chance… maybe?",
+  "Okay but… what if yes?"
+];
+
+let clickCount = 0;
+
+function noClicked() {
+  yesSize += 8;
+  document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+  document.getElementById("yesBtn").style.padding = (yesSize/1.2) + "px";
+
+  clickCount++;
+  let index = clickCount % noTexts.length;
+  document.getElementById("noBtn").innerText = noTexts[index];
+}
+
+function yesClicked() {
+  document.body.innerHTML = `
+    <h1 style="color:#ff4d6d;">Yayyy! LOVE YAAAA 💕</h1>
+    <p>You made my day 😄</p>
+  `;
+}
+</script>
+
+</body>
+</html>
